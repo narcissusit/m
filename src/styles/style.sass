@@ -1,0 +1,255 @@
+*
+	box-sizing: border-box
+	margin: 0
+	padding: 0
+
+@font-face
+	font-family: 'MyriadPro-Regular'
+	src: url('../fonts/MyriadPro-Regular.otf')
+
+
+body
+	width: 100%
+	overflow-x: hidden
+
+.wrap
+	max-width: 1130px
+	padding: 0 10px
+	margin: auto
+
+.sprite_image
+	content: ''
+	background-image: url('../images/sprite.png')
+	display: block
+
+header
+	position: relative
+
+.to
+	background-image: url('../images/back_slide1.jpg')
+	background-position: center bottom
+	.logo
+		&::before
+			@extend .sprite_image
+			width: 92px
+			height: 88px
+	.info
+		max-width: 420px
+
+.no
+	position: absolute
+	top: 0
+	background-image: url('../images/back_slide2.jpg')
+	background-position: center center
+	opacity: 0
+	.logo
+		&::before
+			@extend .sprite_image
+			width: 100px
+			height: 100px
+			background-position: -102px 0
+	.info
+		max-width: 460px
+	transition: opacity .5s ease-in-out
+
+.slide
+	opacity: 1
+
+.to, .no
+	background-repeat: no-repeat
+	background-size: cover
+	height: 100vh
+	width: 100%
+	padding: 50px 0
+	.wrap
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		align-items: center
+	h2
+		font:
+			family: 'Roboto', sans-serif
+			size: 48px
+			width: 900
+		color: #fff
+	.info
+		color: #fff
+		font: 
+			family: 'MyriadPro-Regular', sans-serif
+			size: 19px
+		line-height: 30px
+		margin: 25px 0 35px
+	.start
+		width: 186px
+		height: 42px
+		color: #fff
+		font: 
+			family: 'MyriadPro-Regular', sans-serif
+			size: 19px
+		outline: none
+		border: none
+		cursor: pointer
+		background: linear-gradient(to top, #f81616 0%,#ff5400 100%)
+	.new_slide
+		margin: 20px 10px
+		width: 140px
+		cursor: pointer
+		a
+			text-decoration: none
+			color: #fff
+			font:
+				family: 'Roboto', sans-serif
+				size: 36px
+				weight: 100
+		.arrow
+			&::after
+				margin-top: 10px
+				@extend .sprite_image 
+				background-position: -212px 0
+				width: 32px
+				height: 59px
+				cursor: pointer
+
+.banner
+	margin: auto
+	font-family: 'Roboto', sans-serif
+	.wrap
+		background-color: #eeeeee
+		padding: 0
+
+.apps
+	width: 100%
+	height: 253px
+	background-image: url(../images/app.jpg)
+	background-repeat: no-repeat
+	background-color: #151515
+	background-position: center
+	color: #fff
+	.best
+		font:
+			weight: 100
+			size: 96.26px
+		margin: -5px
+	.mac_apps
+		margin-top: -20px
+		margin-bottom: 7px
+		text-align: justify
+		font:
+			weight: 700
+			size: 18.97px
+		.last_word
+			font:
+				weight: 300
+				size: 18.97px
+	.purpose
+		text-transform: uppercase
+		text-align: justify
+		font:
+			weight: 300
+			size: 19.8px
+
+.inner_apps
+	background-color: rgba(0,0,0,0.32)
+	padding: 25px 50px
+	height: 100%
+	max-width: 278px
+	margin: auto
+
+.banner_info
+	width: 100%
+	background-image: url(../images/girl.jpg)
+	background-position: 10% center
+	background-repeat: no-repeat
+	padding: 40px 50px
+	h3
+		font:
+			size: 24px
+			weight: 900
+	p
+		width: 260px
+		padding: 20px 0
+		font:
+			size: 20.61px
+			weight: 300
+		line-height: 30px
+
+.mail_user
+	input[type="mail"]
+		outline: none
+		width: 244px
+		height: 33px
+		border-radius: 20px
+		border: 1px solid #414141
+		background-color: transparent
+		padding: 0 16px
+		&::placeholder
+			font:
+				size: 16.65px
+				family: 'MyriadPro-Regular', sans-serif
+			color: #222222
+
+.subscribe
+	width: 92px
+	height: 33px
+	outline: none
+	border: none
+	color: #fff
+	border-radius: 20px
+	background: linear-gradient(to top, #0067da 0%,#0098f8 100%) 
+	cursor: pointer
+	margin-top: 5px
+	padding: 5px
+	font:
+		size: 16.65px
+		family: 'MyriadPro-Regular', sans-serif
+
+footer
+	background-color: #e0e0e0
+	height: 240px
+	padding-top: 180px
+	.copyright, a
+		color: #676767
+		font: 
+			family: 'MyriadPro-Regular', sans-serif
+			size: 14px
+	a
+		text-decoration: none
+		margin: 0 14px
+
+
+@media (min-height: 700px)
+	body
+		height: 100vh
+	.to, .no
+		height: calc(100vh - 240px)
+
+@media (min-width: 720px)
+	.to, .no
+		.wrap
+			margin-top: 10vh
+			padding: 0 60px
+	.banner_info
+		background-position: 200px center
+	footer
+		.wrap
+			display: flex
+			justify-content: space-between
+			padding: 0
+
+@media (min-width: 960px)
+	.banner
+		position: absolute
+		left: 0
+		right: 0
+		.wrap
+			height: 253px
+			margin-top: -126px
+			padding: 0
+			display: flex
+			flex-wrap: wrap
+	.apps
+		width: 278px
+
+	.banner_info
+		width: calc(100% - 278px)
+		background-position: 110px -173px
